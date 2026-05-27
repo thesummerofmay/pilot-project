@@ -1,25 +1,33 @@
+import styles from './page.module.css';
+
+const capabilities = [
+  { title: 'Web Apps',            desc: 'Full-stack with auth, DB & deploy' },
+  { title: 'REST & GraphQL APIs', desc: 'Scalable backends, built fast'      },
+  { title: 'AI Features',         desc: 'LLM integrations & pipelines'       },
+  { title: 'CLI Tools',           desc: 'Scripts, automation & devtools'     },
+  { title: 'Dashboards',          desc: 'Real-time data & analytics'         },
+  { title: 'Mobile Apps',         desc: 'React Native & cross-platform'      },
+  { title: 'Browser Extensions',  desc: 'Chrome, Firefox & beyond'           },
+  { title: 'Data Pipelines',      desc: 'ETL, transforms & processing'       },
+];
+
 export default function Home() {
   return (
-    <main style={{
-      height: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontFamily: "'Helvetica Neue', sans-serif",
-      background: '#0a0a0a',
-      color: '#f5f5f5',
-      gap: '1rem',
-    }}>
-      <p style={{ margin: 0, fontSize: '0.9rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#888' }}>
-        Welcome to
-      </p>
-      <h1 style={{ margin: 0, fontSize: '3rem', fontWeight: 700, letterSpacing: '-0.02em' }}>
-        Claude Code
-      </h1>
-      <p style={{ margin: 0, fontSize: '1rem', color: '#666', maxWidth: '320px', textAlign: 'center', lineHeight: 1.6 }}>
-        Your AI-powered coding assistant, right in the terminal.
-      </p>
+    <main className={styles.page}>
+      <div className={styles.hero}>
+        <p className={styles.label}>Hey, May — welcome to</p>
+        <h1 className={styles.title}>Claude Code</h1>
+        <p className={styles.subtitle}>Here&apos;s a taste of what we can build together.</p>
+      </div>
+
+      <div className={styles.grid}>
+        {capabilities.map(({ title, desc }) => (
+          <div key={title} className={styles.card}>
+            <p className={styles.cardTitle}>{title}</p>
+            <p className={styles.cardDesc}>{desc}</p>
+          </div>
+        ))}
+      </div>
     </main>
   );
 }

@@ -1,0 +1,108 @@
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  color: #f5f5f5;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  gap: 2.5rem;
+  padding: 2rem;
+}
+
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #555;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.1s;
+}
+
+.title {
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(90deg, #ffffff, #a78bfa, #60a5fa, #a78bfa, #ffffff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.3s, gradientMove 6s ease infinite 0.9s;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.5s;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.65rem;
+  width: 100%;
+  max-width: 720px;
+}
+
+.card {
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  cursor: default;
+}
+
+.card:hover {
+  border-color: #333;
+  background: #161616;
+}
+
+.card:nth-child(1) { animation-delay: 0.65s; }
+.card:nth-child(2) { animation-delay: 0.75s; }
+.card:nth-child(3) { animation-delay: 0.85s; }
+.card:nth-child(4) { animation-delay: 0.95s; }
+.card:nth-child(5) { animation-delay: 1.05s; }
+.card:nth-child(6) { animation-delay: 1.15s; }
+.card:nth-child(7) { animation-delay: 1.25s; }
+.card:nth-child(8) { animation-delay: 1.35s; }
+
+.cardTitle {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ccc;
+  margin: 0 0 0.3rem 0;
+}
+
+.cardDesc {
+  font-size: 0.72rem;
+  color: #4a4a4a;
+  margin: 0;
+  line-height: 1.5;
+}
