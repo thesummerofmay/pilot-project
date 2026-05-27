@@ -1,11 +1,11 @@
 export const metadata = {
-  title: 'Hello World',
+  title: 'Welcome to Claude Code',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body style={{ margin: 0, overflow: 'hidden' }}>{children}</body>
     </html>
   );
 }
